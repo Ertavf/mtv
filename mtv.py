@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 Given an audio file and an artwork file, create a music video!
 You can upload the result to YouTube, etc.
@@ -16,9 +16,9 @@ try:
     import tempfile
 except ImportError:
     traceback.print_exc()
-    print '-' * 80
-    print 'Python 2.6 or greater is required'
-    print '-' * 80
+    print ('-' * 80)
+    print ('Python 2.6 or greater is required')
+    print ('-' * 80)
 
 
 def main():
@@ -49,14 +49,14 @@ def main():
     finally:
         os.unlink(art)
     with report():
-        print 'Your music video awaits: %s' % out.replace(os.getcwd(), '.')
+        print ('Your music video awaits: %s' % out.replace(os.getcwd(), '.'))
 
 
 @contextmanager
 def report():
-    print '-' * 80
+    print ('-' * 80)
     yield
-    print '-' * 80
+    print ('-' * 80)
 
 
 def length(filename):
@@ -86,6 +86,6 @@ if __name__ == '__main__':
     except:
         traceback.print_exc()
         with report():
-            print 'Whoops, that was unexpected'
-            print 'You can file a bug: https://github.com/kumar303/mtv/issues'
+            print ('Whoops, that was unexpected')
+            print ('You can file a bug: https://github.com/kumar303/mtv/issues')
         sys.exit(1)
